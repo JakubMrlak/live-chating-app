@@ -1,0 +1,177 @@
+html{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-size: 70%;
+}
+
+body{
+      margin: 0;
+      padding: 0;
+      background-image:linear-gradient(to bottom right,#111111,#171717);
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-variation-settings:
+        "slnt" 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+}
+
+*{
+  box-sizing: border-box;
+  }
+
+header{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10 0 0 0;
+}
+
+header a{
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+}
+
+header .group-1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+}
+header .group-1 img{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+header .primary-navbar{
+  display: flex;
+  justify-content: center;
+}
+
+header .primary-navbar ul{
+  padding-inline-start: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.7rem;
+}
+
+header .primary-navbar ul li{
+  display: flex;
+  padding: 0 20 0 20;
+}
+
+main{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+min-height: 80%;
+color:#fff;
+}
+main .form_body{
+  background-color: #101010;
+  border-radius: 3rem;
+  padding: 40px 50px;
+  box-shadow: 0 0 30px #101010;
+  width: 100%;
+  max-width: 52rem;
+  min-height: 32rem;
+  text-align: center;
+}
+main .form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+main .form_input{
+  border-radius: 10px;
+  
+  padding: 1.5rem;
+  width: 40rem;
+  font-size: 1.7rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+main .form_input:focus{
+  border-radius: 10px;
+  padding: 2rem;
+  width: 40rem;
+  font-size: 1.7rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+main #login_header{
+  margin: 0 0 10 0;
+}
+main .submit_button{
+  border-radius: 20rem;
+  padding: 1.5rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+main .other_func{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem
+}
+main .other_func a{
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 20rem;
+  min-width: 10rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  width: 100%;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 0.7rem;
+}
