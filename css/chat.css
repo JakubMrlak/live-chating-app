@@ -1,15 +1,141 @@
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-size: 70%;
+}
+
+body{
     margin: 0;
     padding: 0;
-  }
-  body{
-      margin: 0;
-      padding: 0;
-      background:#171717;
-      font-family: "Inter", sans-serif;
-      font-optical-sizing: auto;
-      font-style: normal;
-      font-variation-settings:
-        "slnt" 0;
-    }
+    background-image:linear-gradient(to bottom right,#101010,#242424);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+}
+
+*{
+box-sizing: border-box;
+}
+
+header{
+width: 100vw;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 10 0 0 0;
+}
+
+header a{
+display: flex;
+color: #fff;
+text-decoration: none;
+}
+
+header .group-1{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin-right: 5rem;
+}
+header .group-1 img{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 5rem;
+}
+
+header .primary-navbar{
+display: flex;
+justify-content: center;
+}
+
+header .primary-navbar ul{
+padding-inline-start: 0;
+list-style-type: none;
+display: flex;
+flex-direction: row;
+font-size: 1.7rem;
+}
+
+header .primary-navbar ul li{
+display: flex;
+padding: 0 20 0 20;
+}
+
+main{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+min-height: 80%;
+color:#fff;
+}
+main .chat_body{
+background-color: #101010;
+display: flex;
+border-radius: 3rem;
+margin: 2rem 10rem;
+width: 100%;
+max-width: 120rem;
+min-height: 55rem;
+text-align: center;
+}
+
+main .chats{
+  background-color: #202020;
+  display: flex;
+  border-radius: 3rem;
+  margin: 3rem 3rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 77rem;
+  min-height: 40rem;
+  text-align: center;
+}
+ .users{
+  background-color: #202020;
+  display: flex;
+  border-radius: 3rem;
+  margin: 3rem 3rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 30rem;
+  min-height: 40rem;
+  text-align: center;
+  flex-direction: column;
+}
+
+.single_user {
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.single_user:hover {
+  background-color: #45a049;
+}
+
+footer{
+width: 100%;
+position: fixed;
+display: flex;
+bottom: 0;
+justify-content: center;
+align-items: center;
+color: #fff;
+font-size: 0.7rem;
+}

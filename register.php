@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-// Check if the user is already logged in
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-    header("Location: ./php/chat.php");
-    exit();
-}
-?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +19,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             <ul>
                 <li id="first"><a href="./index.php">Home</a></li>
                 <li><a href="">Contact us</a></li>
-                <li><a href="./register.php">Register</a></li>                     
+                <li><a href="./index.php">Login</a></li>                     
             </ul>
         </nav>
     </header>
@@ -37,17 +27,22 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <main>
         <h1 id="main_title">Secure Chat</h1>
         <div class="form_body">
-            <h1 id="login_header">Login</h1>
-            <?php if (isset($_SESSION['message'])): ?>
+            <h1 id="login_header">Register</h1>
+            <br>
+            <?php session_start(); ?>
+                <?php if (isset($_SESSION['message'])): ?>
                 <div class="alert <?php echo $_SESSION['msg_type']; ?>">
                     <?php echo $_SESSION['message']; ?>
                 </div>
                 <?php unset($_SESSION['message']); unset($_SESSION['msg_type']); ?>
             <?php endif; ?>
-            <form action="./php/login.php" method="post" class="form" >
-                <input name="Email" type="email" placeholder="email" class="form_input" required>
-                <input name="Password" type="password" placeholder="password" class="form_input" required> 
-                <input type="submit" value="Login" class="submit_button" required>
+
+            <form action="./php/Register_action.php" method="post" class="form" >
+                <input name="Name" type="text" placeholder="Name" class="form_input" required>
+                <input name="Email" type="text" placeholder="Email" class="form_input" required>
+                <input name="Password" type="password" placeholder="Password" class="form_input" required>
+                <input name="Confirm_password" type="password" placeholder="Confirm password" class="form_input" required> 
+                <input type="submit" value="Register" class="submit_button" required>
             </form>
         </div> 
     </main>

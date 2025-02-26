@@ -1,13 +1,41 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"/>
-    <title>SecureChat</title>
-    <link rel="icon" type="png" href="./imgs/icons/secure_mail_icon.png" />
-</head>
-<body>
+<?php
+session_start();
+
+$_SESSION['message'] = null;
+$_SESSION['msg_type'] = null;
+
+include 'db.php'; // Use PDO db.php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    $Email = trim($_POST['Email']);
+    $Pass = $_POST['Password'];
     
-</body>
-</html>
+    try {
+        if ($pdo === null) {
+            throw new PDOException("Database connection failed");
+        }
+        $stmt = $pdo->prepare("SELECT User_id, Password FROM users WHERE Email = ?");
+        $stmt->execute([$Email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($user && password_verify($Pass, $user['Password'])) {
+            $_SESSION['user_id'] = $user['User_id'];
+            $_SESSION['logged_in'] = true;
+            $_SESSION['message'] = "Login successful!";
+            $_SESSION['msg_type'] = "success";
+            header("Location: ../php/chat.php"); 
+            exit();
+        } else {
+            $_SESSION['message'] = "Error: Incorrect password!";
+            $_SESSION['msg_type'] = "error";
+            header("Location: ../index.php");
+            exit();
+        }
+    } catch (PDOException $e) {
+        $_SESSION['message'] = "Error: Email not found or database issue: " . $e->getMessage();
+        $_SESSION['msg_type'] = "error";
+        header("Location: ../index.php");
+        exit();
+    }
+}
+?>

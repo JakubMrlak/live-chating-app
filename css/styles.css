@@ -8,7 +8,7 @@ html{
 body{
       margin: 0;
       padding: 0;
-      background-image:linear-gradient(to bottom right,#111111,#171717);
+      background-image:linear-gradient(to bottom right,#101010,#242424);
       font-family: "Inter", sans-serif;
       font-optical-sizing: auto;
       font-style: normal;
@@ -113,7 +113,7 @@ main .form_input:focus{
   font-size: 1.7rem;
   background-color: transparent;
   color: #ecf0f1;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 main #login_header{
@@ -131,13 +131,13 @@ main .submit_button{
 
 main .other_func{
   display: flex;
-  justify-content: space-between;
-  margin: 0 5rem
+  justify-content: space-evenly;
+  margin: 2rem 5rem;
 }
 main .other_func a{
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 20rem;
   min-width: 10rem;
   background-color: transparent;
@@ -159,11 +159,38 @@ main .other_func a{
 
 
 
+.alert {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.alert.success {
+  background-color: #15ff00;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
 
-
-
-
+/* Error Message */
+.alert.error {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
 footer{
   width: 100%;
