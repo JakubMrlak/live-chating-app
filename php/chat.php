@@ -47,10 +47,10 @@ include 'db.php';
         </div>
         <div class="chats">
             <div class="room-controls">
-                <input type="text" id="roomKeyInput" placeholder="Enter room key to create" style="margin-right: 10px;">
-                <button id="generateRoom">Generate Room</button>
-                <input type="text" id="roomKey" placeholder="Enter room key to join" style="margin-left: 10px;">
-                <button id="joinRoom">Join Room</button>
+                <input type="text" id="roomKeyInput" class="controls_input" placeholder="Enter room key to create" >
+                <button class="controls_button" id="generateRoom">Generate Room</button>
+                <input type="text" id="roomKey" class="controls_input" placeholder="Enter room key to join" >
+                <button class="controls_button" id="joinRoom">Join Room</button>
                 <span id="generatedKey" style="display: none;"></span> <!-- Hidden by default -->
             </div>
             <div class="messages" id="messages">

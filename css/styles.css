@@ -97,7 +97,6 @@ main .form{
 }
 main .form_input{
   border-radius: 10px;
-  
   padding: 1.5rem;
   width: 40rem;
   font-size: 1.7rem;
@@ -144,19 +143,6 @@ main .other_func a{
   color: #ecf0f1;
   transition: all 0.3s ease;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .alert {

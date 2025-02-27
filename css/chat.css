@@ -100,7 +100,70 @@ main .chats{
   max-width: 77rem;
   min-height: 40rem;
   text-align: center;
+  flex-direction: column;
 }
+main .room_controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 5rem;
+}
+.controls_input{
+  border-radius: 1rem;
+  border-width:0;
+  padding: 1.5rem;
+  width: 40rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+.controls_button{ 
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.text{
+  display: flex;
+  flex-direction: row;
+}
+.sender{
+  font-size: 1rem;
+  color: #fff;
+  margin-right: 0,5rem;
+}
+.text_content{
+  font-size: 1rem;
+  color: #fff;
+  margin-right: 0,5rem;
+}
+
+.time{
+  font-size: 0,6rem;
+}
+
+.message-input{
+  border-radius: 0,5rem;
+  border-width:0;
+  padding: 1.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+}
+
  .users{
   background-color: #202020;
   display: flex;
@@ -117,7 +180,7 @@ main .chats{
 .single_user {
   padding: 10px 20px;
   margin: 5px 0;
-  background-color: #4CAF50;
+  background-color: #101010;
   color: white;
   border: none;
   border-radius: 5px;
@@ -125,7 +188,7 @@ main .chats{
   font-size: 16px;
 }
 
-.single_user:hover {
+.single_user ::after {
   background-color: #45a049;
 }
 

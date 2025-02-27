@@ -19,7 +19,7 @@ try {
         throw new PDOException("Room key is required.");
     }
 
-    $stmt = $pdo->prepare("INSERT INTO chats (room_key, user1, user2) VALUES (?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO rooms (room_key, user1, user2) VALUES (?, ?, ?)");
     $stmt->execute([$key, $sender, $recipient]);
 
     echo json_encode(['success' => true, 'room_key' => $key]);
