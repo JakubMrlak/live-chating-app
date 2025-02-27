@@ -20,7 +20,7 @@ try {
     $html = '';
     foreach ($result as $row) {
         $sender = ($row['sender_id'] == $_SESSION['user_id']) ? 'You' : $row['Name'];
-        $html .= "<div class='text'> <p class='sender'>{$sender}:</p> <p class='text_content'> {$row['message']} </p> <p class='time'> {$row['timestamp']}</p></div>";
+        $html .= "<div class='text'> <p class='sender'>{$sender}: </p> <p class='text_content'> {$row['message'] } </p> <p class='time'> {$row['timestamp'] }</p></div>";
     }
     echo $html;
 } catch (PDOException $e) {

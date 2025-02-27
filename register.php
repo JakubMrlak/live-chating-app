@@ -18,7 +18,6 @@
         <nav class="primary-navbar">
             <ul>
                 <li id="first"><a href="./index.php">Home</a></li>
-                <li><a href="">Contact us</a></li>
                 <li><a href="./index.php">Login</a></li>                     
             </ul>
         </nav>
@@ -39,7 +38,7 @@
 
             <form action="./php/Register_action.php" method="post" class="form" >
                 <input name="Name" type="text" placeholder="Name" class="form_input" required>
-                <input name="Email" type="text" placeholder="Email" class="form_input" required>
+                <input name="Email" type="email" placeholder="Email" class="form_input" required>
                 <input name="Password" type="password" placeholder="Password" class="form_input" required>
                 <input name="Confirm_password" type="password" placeholder="Confirm password" class="form_input" required> 
                 <input type="submit" value="Register" class="submit_button" required>

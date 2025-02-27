@@ -20,7 +20,7 @@ include 'db.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/chat.css?v=2"/> <!-- Added version query to force reload -->
+    <link rel="stylesheet" href="../css/CHAT.css?v=2"/> <!-- Added version query to force reload -->
     <title>SecureChat</title>
     <link rel="icon" type="image/svg+xml" href="../imgs/icons/secure_mail_icon.svg" />
     <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme: dark)" href="../imgs/icons/secure_mail_icon_dark.svg" />
@@ -57,8 +57,8 @@ include 'db.php';
                 <!-- Messages loaded here -->
             </div>
             <div class="message-input">
-                <input type="text" id="messageInput" placeholder="Type your message...">
-                <button id="sendMessage">Send</button>
+                <input class="message_input_text" type="text" id="messageInput" placeholder="Type your message...">
+                <button class="message_button"id="sendMessage">Send</button>
             </div>
         </div>
     </div>

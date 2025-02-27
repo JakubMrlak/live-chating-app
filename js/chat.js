@@ -21,7 +21,7 @@ function loadUsers(userId) {
     fetch('../php/get_users.php')
         .then(response => response.json())
         .then(users => {
-            const peopleDiv = document.querySelector('.users'); // Changed from .people_list to .users
+            const peopleDiv = document.querySelector('.users');
             if (!peopleDiv) {
                 console.error('users div not found in the DOM');
                 return;
@@ -31,10 +31,12 @@ function loadUsers(userId) {
                 if (user.User_id !== userId) {
                     const btn = document.createElement('button');
                     btn.textContent = user.Name;
-                    btn.className = 'single_user'; // Updated class name as per your file
-                    btn.addEventListener('click', () => selectUser(user.User_id));
+                    btn.className = 'single_user';
+                    btn.addEventListener('click', () => selectUser(user.User_id, btn));
                     peopleDiv.appendChild(btn);
-                    // Removed extra <br> to avoid clutter (optional, add back if needed)
+                    // Set initial background color to #101010
+                    btn.style.backgroundColor = '#101010';
+                    btn.style.color = 'white'; // Ensure text is readable on dark background
                 }
             });
         })
@@ -43,12 +45,31 @@ function loadUsers(userId) {
         });
 }
 
-function selectUser(userId) {
+function selectUser(userId, button) {
+    console.log('Selecting user with ID:', userId, 'Button:', button);
+    if (!button || !(button instanceof HTMLElement)) {
+        console.error('Invalid button element in selectUser');
+        return;
+    }
+
     currentRecipient = userId;
     currentRoom = null;
     document.getElementById('messages').innerHTML = '';
     document.getElementById('generatedKey').textContent = '';
     document.getElementById('roomKeyInput').value = ''; // Clear the input on user selection
+
+    // Remove selected styling from all buttons
+    const allButtons = document.querySelectorAll('.single_user');
+    allButtons.forEach(btn => {
+        console.log('Resetting color for:', btn);
+        btn.style.backgroundColor = '#101010'; // Revert to initial color
+        btn.style.color = 'white'; // Ensure text remains readable
+    });
+
+    // Apply selected styling to the clicked button
+    console.log('Applying selected color to:', button);
+    button.style.backgroundColor = '#ffffff'; // White for selected
+    button.style.color = '#101010'; // Dark text on white background for readability
 }
 
 function generateRoom() {
@@ -70,8 +91,8 @@ function generateRoom() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            currentRoom = roomKeyInput; // Use the input key as currentRoom
-            document.getElementById('roomKeyInput').value = ''; // Clear the input after success
+            currentRoom = roomKeyInput;
+            document.getElementById('roomKeyInput').value = '';
             loadMessages();
         } else {
             alert('Failed to generate room: ' + (data.error || 'Unknown error'));
@@ -100,7 +121,7 @@ function joinRoom() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            currentRoom = key; // Use the input key as currentRoom
+            currentRoom = key;
             loadMessages();
         } else {
             alert('Invalid key');

@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); // Already included
 include 'db.php';
 
 header('Content-Type: application/json');
@@ -20,9 +20,13 @@ try {
     }
 
     $stmt = $pdo->prepare("INSERT INTO rooms (room_key, user1, user2) VALUES (?, ?, ?)");
-    $stmt->execute([$key, $sender, $recipient]);
-
-    echo json_encode(['success' => true, 'room_key' => $key]);
+    $success = $stmt->execute([$key, $sender, $recipient]);
+    if ($success) {
+        error_log("Room created: key=$key, user1=$sender, user2=$recipient");
+        echo json_encode(['success' => true, 'room_key' => $key]);
+    } else {
+        throw new PDOException("Insert failed: " . implode(", ", $stmt->errorInfo()));
+    }
 } catch (PDOException $e) {
     error_log("Error in generate_room.php: " . $e->getMessage());
     echo json_encode(['error' => 'Failed to generate room: ' . $e->getMessage()]);

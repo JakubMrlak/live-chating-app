@@ -28,7 +28,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         <nav class="primary-navbar">
             <ul>
                 <li id="first"><a href="./index.php">Home</a></li>
-                <li><a href="">Contact us</a></li>
                 <li><a href="./register.php">Register</a></li>                     
             </ul>
         </nav>
